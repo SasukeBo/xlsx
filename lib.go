@@ -542,6 +542,7 @@ func readRowsFromSheet(Worksheet *xlsxWorksheet, file *File, sheet *Sheet, rowLi
 	} else {
 		minCol, _, maxCol, maxRow, err = calculateMaxMinFromWorksheet(Worksheet)
 	}
+	maxRow = len(Worksheet.SheetData.Row)
 	if err != nil {
 		panic(err.Error())
 	}
